@@ -2,13 +2,13 @@
 
 // variables!
 
-slide_width = 640px
-slide_height = 480px
-slide_background = #eaeaea
+slide_width = 100%
+slide_height = 768px
+slide_background = #eaeaea 
 
-slide_transition_length = .6s
+slide_transition_length = 2s
 slide_transition_easing = ease
-slide_transition_rotate_y = 90deg
+slide_transition_rotate_y = 180deg
 // Safari bugs out on 3d transform-origins, so we have to fake it
 slide_transition_nudge_x = -100px
 
@@ -31,6 +31,77 @@ bullet_transition_translate_x = 16px
   size: landscape
   margin: 0
 
+nav ul ul
+  display: none
+  transition:0.5s
+
+nav ul li:hover > ul
+  display: block
+  transition:0.5s
+
+nav ul 
+  background: #efefef
+  padding: 0
+  list-style: none
+  position: relative
+  display: inline-table
+  transition:0.5s
+
+nav ul:after 
+  content: "" 
+  clear: both
+  display: block
+  transition:0.5s
+
+nav ul li 
+  transition:0.5s
+
+nav ul li:hover 
+  background: #4b545f
+  transition:0.5s
+
+nav ul li:hover a 
+  color: #fff
+  transition:0.5s
+
+nav ul li a 
+  display: block 
+  padding:9px
+  color: #757575 
+  text-decoration: none
+  transition:0.5s
+
+nav ul ul 
+  background: #5f6975 
+  border-radius: 0px 
+  padding: 0
+  position: absolute 
+  top: 100%
+  transition:0.5s
+
+nav ul ul li 
+  float: none
+  border-top: 1px solid #6b727c
+  border-bottom: 1px solid #575f6a
+  position: relative
+  transition:0.5s
+
+nav ul ul li a 
+  padding: 15px 10px
+  color: #fff
+  transition:0.5s
+
+nav ul ul li a:hover 
+  background: #4b545f;
+  transition:0.5s
+
+
+nav ul ul ul  
+  position: absolute 
+  left: 100%; top:0
+  transition:0.5s
+
+
 // bespoke.js layout styles
 
 article
@@ -39,7 +110,7 @@ article
   &.bespoke-parent
     display: block
     position: absolute
-    top: 0
+    top: 40px
     bottom: 0
     left: 0
     right: 0
@@ -83,7 +154,7 @@ article
   transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2)
 
 .bespoke-after
-  transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateY(slide_transition_rotate_y) translateX(slide_width / 2)
+  transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateZ(slide_transition_rotate_y) translateX(slide_width / 2)
   @media print
     transform: none
 
@@ -185,9 +256,6 @@ hr
 
 ul
   list-style: none
-
-li
-  margin-bottom: 12px
 
 p
   margin: 0 100px 12px

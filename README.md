@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # My First Bespoke
 > A [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) presentation, built with [generator-bespoke](https://github.com/markdalgleish/generator-bespoke)
 
@@ -15,3 +16,9 @@ Then, install dependencies and run the preview server:
 $ npm install && bower install
 $ grunt server
 ```
+=======
+Photography
+===========
+
+Membahas tentang dunia Photography
+>>>>>>> 0cf687c04cb1e0be5f0cc13b59a57c357bbac69c

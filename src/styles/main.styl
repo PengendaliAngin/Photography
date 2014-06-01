@@ -2,15 +2,15 @@
 
 // variables!
 
-slide_width = 100%
+slide_width = 1445px
 slide_height = 768px
-slide_background = #eaeaea 
+slide_background = #002200
 
-slide_transition_length = 2s
+slide_transition_length = 1.5s
 slide_transition_easing = ease
-slide_transition_rotate_y = 180deg
+slide_transition_rotate_y = 120deg
 // Safari bugs out on 3d transform-origins, so we have to fake it
-slide_transition_nudge_x = -100px
+slide_transition_nudge_x = 0px
 
 bullet_transition_length = .3s
 bullet_transition_easing = ease
@@ -30,6 +30,15 @@ bullet_transition_translate_x = 16px
 @page
   size: landscape
   margin: 0
+
+header
+  width:1366px
+  height:40px
+  background:#002200
+
+nav
+ position:absolute
+ display:block
 
 nav ul ul
   display: none
@@ -110,7 +119,7 @@ article
   &.bespoke-parent
     display: block
     position: absolute
-    top: 40px
+    top: 0
     bottom: 0
     left: 0
     right: 0
@@ -119,6 +128,8 @@ article
       overflow: visible
       position: static
     perspective: 600px
+  background: #000
+  margin-top:40px
 
 .bespoke-slide
   transition:
@@ -129,9 +140,9 @@ article
   backface-visibility: hidden
   display: flex
   flex-direction: column
-  justify-content: center
-  align-items: center
-  text-align: center
+  justify-content: left
+  align-items: left
+  text-align: left
   width: slide_width
   height: slide_height
   position: absolute
@@ -139,7 +150,7 @@ article
   margin-top: (slide_height / 2) * -1
   left: 50%
   margin-left: (slide_width / 2) * -1
-  background: slide_background
+  background: linear-gradient(#aeaeae,#020)
   padding: 40px
   border-radius: 0
   @media print
@@ -151,10 +162,10 @@ article
     margin: 0
 
 .bespoke-before
-  transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2)
+  transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateX(slide_transition_rotate_y * -1) translateY(slide_width / -2)
 
 .bespoke-after
-  transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateZ(slide_transition_rotate_y) translateX(slide_width / 2)
+  transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateX(slide_transition_rotate_y) translateZ(slide_width / 2)
   @media print
     transform: none
 
@@ -231,7 +242,6 @@ pre
 body
   font-family: helvetica, arial, sans-serif
   font-size: 18px
-  color: #404040
 
 h1
   font-size: 72px
@@ -260,10 +270,13 @@ ul
 p
   margin: 0 100px 12px
   line-height: 22px
+  font-size:20px
 
 a
   color: #0089f3
   text-decoration: none
 
 img
-  width: 200px
+  max-width:45%
+  height:auto
+  vertical-align:middle
